@@ -1,0 +1,1254 @@
+/* ============================================================================
+   VEHICLE TELEMATICS DASHBOARD - BRIGHT GLASSMORPHISM THEME
+   Light mode, premium SaaS design with soft gradients and glass effects
+   ============================================================================ */
+
+:root {
+  /* Colors */
+  --color-primary: #0ea5e9;
+  --color-primary-dark: #0284c7;
+  --color-secondary: #8b5cf6;
+  --color-secondary-dark: #7c3aed;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-rose: #f43f5e;
+  
+  /* Text */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  
+  /* Backgrounds */
+  --bg-white: #ffffff;
+  --bg-light: #f8fafc;
+  --bg-lighter: #f1f5f9;
+  
+  /* Glass */
+  --glass-light: rgba(255, 255, 255, 0.65);
+  --glass-strong: rgba(255, 255, 255, 0.78);
+  --glass-border: rgba(148, 163, 184, 0.25);
+  --glass-border-light: rgba(148, 163, 184, 0.15);
+  
+  /* Shadows */
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 15px 40px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 24px 80px rgba(59, 130, 246, 0.12);
+}
+
+/* ============================================================================
+   GLOBAL STYLES
+   ============================================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-primary);
+  background: radial-gradient(circle at 25% 20%, rgba(56, 189, 248, 0.22), transparent 34%),
+              radial-gradient(circle at 85% 15%, rgba(139, 92, 246, 0.18), transparent 32%),
+              radial-gradient(circle at 50% 100%, rgba(59, 130, 246, 0.08), transparent 45%),
+              linear-gradient(135deg, #f8fbff 0%, #eef6ff 45%, #f7f3ff 100%);
+  background-attachment: fixed;
+}
+
+/* ============================================================================
+   NICEGUI OVERRIDES
+   ============================================================================ */
+
+.nicegui-content {
+  background: transparent !important;
+}
+
+/* ============================================================================
+   LAYOUT - SIDEBAR
+   ============================================================================ */
+
+.sidebar {
+  background: var(--glass-strong) !important;
+  backdrop-filter: blur(22px) !important;
+  border-right: 1px solid var(--glass-border) !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 12px;
+}
+
+.sidebar-nav-item {
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid transparent;
+}
+
+.sidebar-nav-item:hover {
+  background: rgba(14, 165, 233, 0.08);
+  color: var(--color-primary-dark);
+  border-color: rgba(14, 165, 233, 0.2);
+}
+
+.sidebar-nav-item-active {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.25);
+}
+
+/* ============================================================================
+   LAYOUT - HEADER & HERO
+   ============================================================================ */
+
+.header-container {
+  background: var(--glass-strong) !important;
+  backdrop-filter: blur(22px) !important;
+  border-bottom: 1px solid var(--glass-border) !important;
+  box-shadow: var(--shadow-soft) !important;
+  border-radius: 0 0 24px 0;
+  padding: 32px 48px !important;
+  margin-bottom: 32px;
+}
+
+.header-title {
+  font-size: 2.2rem !important;
+  font-weight: 900 !important;
+  color: var(--text-primary) !important;
+  letter-spacing: -0.02em;
+}
+
+.header-subtitle {
+  font-size: 1rem !important;
+  color: var(--text-muted) !important;
+  font-weight: 500 !important;
+  margin-top: 8px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.08));
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: 16px;
+  color: #047857;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 16px;
+}
+
+/* ============================================================================
+   CARDS - GLASSMORPHISM
+   ============================================================================ */
+
+.glass-card {
+  background: var(--glass-light) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 24px !important;
+  padding: 24px !important;
+  box-shadow: var(--shadow-soft) !important;
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: var(--glass-strong) !important;
+  box-shadow: var(--shadow-md) !important;
+  transform: translateY(-2px);
+}
+
+/* ============================================================================
+   METRIC CARDS
+   ============================================================================ */
+
+.metric-card {
+  background: var(--glass-light) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 24px !important;
+  padding: 28px !important;
+  min-height: 140px;
+  box-shadow: var(--shadow-soft) !important;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.metric-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  border-radius: 24px 0 0 24px;
+  background: var(--accent-color, var(--color-primary));
+  transition: width 0.3s ease;
+}
+
+.metric-card:hover {
+  background: var(--glass-strong) !important;
+  box-shadow: var(--shadow-md) !important;
+  transform: translateY(-4px);
+}
+
+.metric-card:hover::before {
+  width: 6px;
+}
+
+.metric-card.tone-cyan {
+  --accent-color: var(--color-primary);
+}
+
+.metric-card.tone-cyan::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.05), transparent 70%);
+  pointer-events: none;
+}
+
+.metric-card.tone-violet {
+  --accent-color: var(--color-secondary);
+}
+
+.metric-card.tone-violet::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.05), transparent 70%);
+  pointer-events: none;
+}
+
+.metric-card.tone-red {
+  --accent-color: var(--color-danger);
+}
+
+.metric-card.tone-amber {
+  --accent-color: var(--color-warning);
+}
+
+.metric-card.tone-green {
+  --accent-color: var(--color-success);
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.metric-value {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+.metric-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+/* ============================================================================
+   SECTION HEADERS
+   ============================================================================ */
+
+.section-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+
+.section-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.section-header {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--glass-border);
+}
+
+/* ============================================================================
+   BUTTONS
+   ============================================================================ */
+
+.button-primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 16px !important;
+  padding: 12px 24px !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.25) !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-primary:hover {
+  box-shadow: 0 12px 30px rgba(14, 165, 233, 0.4) !important;
+  transform: translateY(-2px);
+}
+
+.button-secondary {
+  background: var(--glass-light) !important;
+  color: var(--text-secondary) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 16px !important;
+  padding: 10px 20px !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-secondary:hover {
+  background: rgba(14, 165, 233, 0.08) !important;
+  color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+/* ============================================================================
+   CHARTS
+   ============================================================================ */
+
+.chart-card {
+  background: var(--glass-light) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 24px !important;
+  padding: 28px !important;
+  box-shadow: var(--shadow-soft) !important;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-container {
+  flex: 1;
+  min-height: 300px;
+}
+
+/* ============================================================================
+   TABLES
+   ============================================================================ */
+
+.table-container {
+  background: var(--glass-light) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 24px !important;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.table-header {
+  background: rgba(248, 250, 252, 0.85) !important;
+  border-bottom: 1px solid var(--glass-border) !important;
+  padding: 16px !important;
+}
+
+.table-header th {
+  color: var(--text-secondary) !important;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 12px 16px !important;
+  border-bottom: 1px solid var(--glass-border) !important;
+}
+
+.table-row {
+  border-bottom: 1px solid var(--glass-border-light) !important;
+  transition: all 0.2s ease;
+}
+
+.table-row:hover {
+  background: rgba(14, 165, 233, 0.06) !important;
+}
+
+.table-cell {
+  padding: 14px 16px !important;
+  color: var(--text-primary) !important;
+  font-size: 0.9rem !important;
+}
+
+.table-cell-secondary {
+  color: var(--text-secondary) !important;
+}
+
+/* ============================================================================
+   BADGES
+   ============================================================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-low-risk {
+  background: rgba(16, 185, 129, 0.15);
+  color: #047857;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-medium-risk {
+  background: rgba(245, 158, 11, 0.15);
+  color: #92400e;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge-high-risk {
+  background: rgba(239, 68, 68, 0.15);
+  color: #7f1d1d;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.badge-normal {
+  background: rgba(16, 185, 129, 0.15);
+  color: #047857;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-attention {
+  background: rgba(245, 158, 11, 0.15);
+  color: #92400e;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge-alert {
+  background: rgba(239, 68, 68, 0.15);
+  color: #7f1d1d;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* ============================================================================
+   INFO CARDS
+   ============================================================================ */
+
+.info-card {
+  background: var(--glass-light) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-left: 4px solid var(--color-primary) !important;
+  border-radius: 24px !important;
+  padding: 24px !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.info-card-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.info-card-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.info-card-content {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ============================================================================
+   WARNING & SUCCESS CARDS
+   ============================================================================ */
+
+.warning-card {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(245, 158, 11, 0.04)) !important;
+  border: 1px solid rgba(245, 158, 11, 0.3) !important;
+  border-left: 4px solid var(--color-warning) !important;
+}
+
+.warning-card .info-card-title {
+  color: #b45309;
+}
+
+.success-card {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.04)) !important;
+  border: 1px solid rgba(16, 185, 129, 0.3) !important;
+  border-left: 4px solid var(--color-success) !important;
+}
+
+.success-card .info-card-title {
+  color: #047857;
+}
+
+/* ============================================================================
+   INPUTS & FORMS
+   ============================================================================ */
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  background: var(--glass-strong) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 12px !important;
+  padding: 12px 16px !important;
+  color: var(--text-primary) !important;
+  font-size: 0.95rem !important;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1) !important;
+  background: white !important;
+}
+
+/* ============================================================================
+   PIPELINE NODES
+   ============================================================================ */
+
+.pipeline-node {
+  background: var(--glass-light) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 2px solid var(--glass-border) !important;
+  border-radius: 20px !important;
+  padding: 24px !important;
+  text-align: center;
+  box-shadow: var(--shadow-soft) !important;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.pipeline-node:hover {
+  background: var(--glass-strong) !important;
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 30px rgba(14, 165, 233, 0.3) !important;
+  transform: translateY(-4px);
+}
+
+.pipeline-node-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.pipeline-node-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.pipeline-node-text {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.pipeline-arrow {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  margin: 12px 0;
+  opacity: 0.6;
+}
+
+/* ============================================================================
+   PREDICTION FORM
+   ============================================================================ */
+
+.prediction-input-group {
+  background: var(--glass-light) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 20px !important;
+  padding: 24px !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.prediction-output {
+  background: var(--glass-light) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 20px !important;
+  padding: 32px !important;
+  box-shadow: var(--shadow-soft) !important;
+  text-align: center;
+}
+
+.prediction-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+/* ============================================================================
+   RISK BADGE LARGE
+   ============================================================================ */
+
+.risk-badge-large {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 32px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  box-shadow: var(--shadow-md);
+}
+
+.risk-badge-large.low {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(16, 185, 129, 0.08));
+  border: 2px solid rgba(16, 185, 129, 0.4);
+  color: #047857;
+}
+
+.risk-badge-large.medium {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(245, 158, 11, 0.08));
+  border: 2px solid rgba(245, 158, 11, 0.4);
+  color: #92400e;
+}
+
+.risk-badge-large.high {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(239, 68, 68, 0.08));
+  border: 2px solid rgba(239, 68, 68, 0.4);
+  color: #7f1d1d;
+}
+
+/* ============================================================================
+   RESPONSIVE
+   ============================================================================ */
+
+@media (max-width: 1024px) {
+  .metric-value {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-container {
+    padding: 24px 20px !important;
+  }
+
+  .header-title {
+    font-size: 1.6rem !important;
+  }
+
+  .header-subtitle {
+    font-size: 0.85rem !important;
+  }
+
+  .metric-card {
+    min-height: 120px;
+    padding: 20px !important;
+  }
+
+  .metric-value {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+  }
+
+  .table-cell {
+    padding: 10px 12px !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+/* ============================================================================
+   SCROLLBAR
+   ============================================================================ */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(148, 163, 184, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+
+/* ==========================================================
+   Recent High-Risk Records Table
+   ========================================================== */
+
+.recent-risk-table-wrapper .q-table__container {
+    border-radius: 24px !important;
+    box-shadow: none !important;
+    border: 1px solid rgba(187, 224, 239, 0.75) !important;
+    overflow: hidden !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+}
+
+.recent-risk-table-wrapper table {
+    border-collapse: separate !important;
+    border-spacing: 0 10px !important;
+    background: transparent !important;
+}
+
+.recent-risk-table-wrapper thead tr {
+    background: rgba(187, 224, 239, 0.45) !important;
+}
+
+.recent-risk-table-wrapper thead th {
+    color: #161E54 !important;
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    border-bottom: none !important;
+    padding: 14px 18px !important;
+}
+
+.recent-risk-table-wrapper tbody tr {
+    background: rgba(187, 224, 239, 0.22) !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+}
+
+.recent-risk-table-wrapper tbody tr:nth-child(even) {
+    background: rgba(187, 224, 239, 0.34) !important;
+}
+
+.recent-risk-table-wrapper tbody td {
+    color: rgba(22, 30, 84, 0.78) !important;
+    font-size: 13px !important;
+    font-weight: 650 !important;
+    padding: 16px 18px !important;
+    border-bottom: none !important;
+}
+
+.recent-risk-table-wrapper tbody td:first-child {
+    border-top-left-radius: 18px !important;
+    border-bottom-left-radius: 18px !important;
+}
+
+.recent-risk-table-wrapper tbody td:last-child {
+    border-top-right-radius: 18px !important;
+    border-bottom-right-radius: 18px !important;
+}
+
+.recent-risk-table-wrapper tbody tr:hover {
+    background: rgba(187, 224, 239, 0.55) !important;
+    transform: translateY(-1px);
+    transition: all 0.18s ease;
+}
+
+
+/* ==========================================================
+   Pipeline Sample Table
+   ========================================================== */
+
+.sample-pipeline-table .q-table__container {
+    border-radius: 22px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(187, 224, 239, 0.8) !important;
+    box-shadow: none !important;
+}
+
+.sample-pipeline-table thead tr {
+    background: rgba(187, 224, 239, 0.45) !important;
+}
+
+.sample-pipeline-table thead th {
+    color: #161E54 !important;
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+    padding: 14px 16px !important;
+}
+
+.sample-pipeline-table tbody td {
+    color: rgba(22, 30, 84, 0.78) !important;
+    font-size: 13px !important;
+    font-weight: 650 !important;
+    padding: 14px 16px !important;
+    border-bottom: 1px solid rgba(187, 224, 239, 0.35) !important;
+}
+
+.sample-pipeline-table tbody tr:nth-child(even) {
+    background: rgba(187, 224, 239, 0.18) !important;
+}
+
+.sample-pipeline-table tbody tr:hover {
+    background: rgba(187, 224, 239, 0.34) !important;
+}
+
+
+/* ==========================================================
+   Unified App Data Table
+   Based on Pipeline Sample Table
+   Apply to:
+   - sample-pipeline-table
+   - app-data-table
+   - recent-risk-table-wrapper
+   - risk-scoring-table-wrapper
+   ========================================================== */
+
+/* Main table container */
+.sample-pipeline-table .q-table__container,
+.app-data-table .q-table__container,
+.recent-risk-table-wrapper .q-table__container,
+.risk-scoring-table-wrapper .q-table__container {
+    border-radius: 22px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(187, 224, 239, 0.8) !important;
+    box-shadow: none !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+}
+
+/* Table layout */
+.sample-pipeline-table table,
+.app-data-table table,
+.recent-risk-table-wrapper table,
+.risk-scoring-table-wrapper table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+    background: transparent !important;
+}
+
+/* Header row */
+.sample-pipeline-table thead tr,
+.app-data-table thead tr,
+.recent-risk-table-wrapper thead tr,
+.risk-scoring-table-wrapper thead tr {
+    background: rgba(187, 224, 239, 0.45) !important;
+}
+
+/* Header cells */
+.sample-pipeline-table thead th,
+.app-data-table thead th,
+.recent-risk-table-wrapper thead th,
+.risk-scoring-table-wrapper thead th {
+    color: #161E54 !important;
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+    padding: 14px 16px !important;
+    border-bottom: 1px solid rgba(187, 224, 239, 0.45) !important;
+    white-space: nowrap !important;
+}
+
+/* Body rows */
+.sample-pipeline-table tbody tr,
+.app-data-table tbody tr,
+.recent-risk-table-wrapper tbody tr,
+.risk-scoring-table-wrapper tbody tr {
+    background: rgba(255, 255, 255, 0.96) !important;
+}
+
+/* Even body rows */
+.sample-pipeline-table tbody tr:nth-child(even),
+.app-data-table tbody tr:nth-child(even),
+.recent-risk-table-wrapper tbody tr:nth-child(even),
+.risk-scoring-table-wrapper tbody tr:nth-child(even) {
+    background: rgba(187, 224, 239, 0.18) !important;
+}
+
+/* Body cells */
+.sample-pipeline-table tbody td,
+.app-data-table tbody td,
+.recent-risk-table-wrapper tbody td,
+.risk-scoring-table-wrapper tbody td {
+    color: rgba(22, 30, 84, 0.78) !important;
+    font-size: 13px !important;
+    font-weight: 650 !important;
+    padding: 14px 16px !important;
+    border-bottom: 1px solid rgba(187, 224, 239, 0.35) !important;
+    white-space: nowrap !important;
+}
+
+/* Hover rows */
+.sample-pipeline-table tbody tr:hover,
+.app-data-table tbody tr:hover,
+.recent-risk-table-wrapper tbody tr:hover,
+.risk-scoring-table-wrapper tbody tr:hover {
+    background: rgba(187, 224, 239, 0.34) !important;
+    transition: background 0.18s ease;
+}
+
+/* Bottom pagination */
+.sample-pipeline-table .q-table__bottom,
+.app-data-table .q-table__bottom,
+.recent-risk-table-wrapper .q-table__bottom,
+.risk-scoring-table-wrapper .q-table__bottom {
+    color: rgba(22, 30, 84, 0.62) !important;
+    font-weight: 650 !important;
+    border-top: 1px solid rgba(187, 224, 239, 0.35) !important;
+    background: white !important;
+}
+
+/* Pagination icons/buttons */
+.sample-pipeline-table .q-table__bottom .q-btn,
+.app-data-table .q-table__bottom .q-btn,
+.recent-risk-table-wrapper .q-table__bottom .q-btn,
+.risk-scoring-table-wrapper .q-table__bottom .q-btn {
+    color: #161E54 !important;
+}
+
+/* Horizontal scroll wrapper */
+.sample-pipeline-table,
+.app-data-table,
+.recent-risk-table-wrapper,
+.risk-scoring-table-wrapper {
+    overflow-x: auto !important;
+}
+
+/* Remove old pill-row behavior if previous CSS exists */
+.sample-pipeline-table tbody td:first-child,
+.app-data-table tbody td:first-child,
+.recent-risk-table-wrapper tbody td:first-child,
+.risk-scoring-table-wrapper tbody td:first-child {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+.sample-pipeline-table tbody td:last-child,
+.app-data-table tbody td:last-child,
+.recent-risk-table-wrapper tbody td:last-child,
+.risk-scoring-table-wrapper tbody td:last-child {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+/* ==========================================================
+   Prediction Form Fields - Single Border, Better Spacing
+   ========================================================== */
+
+.prediction-field .q-field__control {
+    min-height: 78px !important;
+    border-radius: 22px !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    border: 1.5px solid rgba(187, 224, 239, 0.95) !important;
+    box-shadow: 0 8px 22px rgba(22, 30, 84, 0.045) !important;
+    padding: 8px 20px 10px 20px !important;
+}
+
+.prediction-field .q-field__control::before,
+.prediction-field .q-field__control::after {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.prediction-field .q-field__control:hover {
+    border-color: rgba(22, 30, 84, 0.22) !important;
+    box-shadow: 0 10px 26px rgba(22, 30, 84, 0.07) !important;
+}
+
+.prediction-field.q-field--focused .q-field__control {
+    border-color: #161E54 !important;
+    box-shadow: 0 0 0 3px rgba(187, 224, 239, 0.55) !important;
+}
+
+.prediction-field .q-field__label {
+    color: rgba(22, 30, 84, 0.58) !important;
+    font-weight: 900 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.01em !important;
+    top: 12px !important;
+    padding: 10px !important;
+    transform: none !important;
+}
+
+.prediction-field.q-field--float .q-field__label,
+.prediction-field.q-field--labeled .q-field__label,
+.prediction-field.q-field--stacked .q-field__label {
+    transform: none !important;
+    top: 12px !important;
+}
+
+.prediction-field .q-field__native,
+.prediction-field .q-field__input {
+    color: #161E54 !important;
+    font-weight: 600 !important;
+    font-size: 19px !important;
+    line-height: 1.25 !important;
+    padding-top: 28px !important;
+    padding-bottom: 4px !important;
+}
+
+.prediction-select .q-field__native {
+    color: #161E54 !important;
+    font-weight: 650 !important;
+    font-size: 19px !important;
+    text-transform: none !important;
+    padding-top: 28px !important;
+}
+
+.prediction-select .q-field__append,
+.prediction-field .q-field__append {
+    color: rgba(22, 30, 84, 0.52) !important;
+    height: 78px !important;
+}
+
+.prediction-field .q-field__bottom {
+    display: none !important;
+}
+
+.prediction-field .q-field__control-container {
+    padding-top: 0 !important;
+}
+
+.q-menu .q-item__label {
+    color: #161E54 !important;
+    font-weight: 650 !important;
+}
+
+.prediction-field .q-field__native,
+.prediction-field .q-field__input,
+.prediction-inner-field .q-field__native,
+.prediction-inner-field .q-field__input {
+    color: #161E54 !important;
+    font-weight: 600 !important;
+    font-size: 19px !important;
+    line-height: 1.25 !important;
+    padding-top: 32px !important;
+    padding-bottom: 0 !important;
+}
+
+.prediction-inner-field.q-field--float .q-field__label,
+.prediction-inner-field.q-field--labeled .q-field__label,
+.prediction-inner-field.q-field--stacked .q-field__label {
+    top: 14px !important;
+    left: 10px !important;
+    transform: none !important;
+}
+
+/* ==========================================================
+   App Data Table - Anomaly / Pipeline Style
+   ========================================================== */
+
+.app-data-table .q-table__container,
+.recent-risk-table-wrapper .q-table__container,
+.risk-scoring-table-wrapper .q-table__container,
+.sample-pipeline-table .q-table__container {
+    border-radius: 22px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(187, 224, 239, 0.8) !important;
+    box-shadow: none !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+}
+
+.app-data-table table,
+.recent-risk-table-wrapper table,
+.risk-scoring-table-wrapper table,
+.sample-pipeline-table table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+    background: transparent !important;
+}
+
+.app-data-table thead tr,
+.recent-risk-table-wrapper thead tr,
+.risk-scoring-table-wrapper thead tr,
+.sample-pipeline-table thead tr {
+    background: rgba(187, 224, 239, 0.45) !important;
+}
+
+.app-data-table thead th,
+.recent-risk-table-wrapper thead th,
+.risk-scoring-table-wrapper thead th,
+.sample-pipeline-table thead th {
+    color: #161E54 !important;
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+    padding: 14px 16px !important;
+    text-align: center !important;
+    border-bottom: 1px solid rgba(187, 224, 239, 0.45) !important;
+    white-space: nowrap !important;
+}
+
+.app-data-table tbody tr,
+.recent-risk-table-wrapper tbody tr,
+.risk-scoring-table-wrapper tbody tr,
+.sample-pipeline-table tbody tr {
+    background: rgba(255, 255, 255, 0.96) !important;
+}
+
+.app-data-table tbody tr:nth-child(even),
+.recent-risk-table-wrapper tbody tr:nth-child(even),
+.risk-scoring-table-wrapper tbody tr:nth-child(even),
+.sample-pipeline-table tbody tr:nth-child(even) {
+    background: rgba(187, 224, 239, 0.18) !important;
+}
+
+.app-data-table tbody td,
+.recent-risk-table-wrapper tbody td,
+.risk-scoring-table-wrapper tbody td,
+.sample-pipeline-table tbody td {
+    color: rgba(22, 30, 84, 0.78) !important;
+    font-size: 13px !important;
+    font-weight: 650 !important;
+    padding: 14px 16px !important;
+    text-align: center !important;
+    border-bottom: 1px solid rgba(187, 224, 239, 0.35) !important;
+    white-space: nowrap !important;
+}
+
+.app-data-table tbody tr:hover,
+.recent-risk-table-wrapper tbody tr:hover,
+.risk-scoring-table-wrapper tbody tr:hover,
+.sample-pipeline-table tbody tr:hover {
+    background: rgba(187, 224, 239, 0.34) !important;
+    transition: background 0.18s ease;
+}
+
+.app-data-table .q-table__bottom,
+.recent-risk-table-wrapper .q-table__bottom,
+.risk-scoring-table-wrapper .q-table__bottom,
+.sample-pipeline-table .q-table__bottom {
+    color: rgba(22, 30, 84, 0.62) !important;
+    font-weight: 650 !important;
+    border-top: 1px solid rgba(187, 224, 239, 0.35) !important;
+    background: white !important;
+}
+
+.app-data-table,
+.recent-risk-table-wrapper,
+.risk-scoring-table-wrapper,
+.sample-pipeline-table {
+    overflow-x: auto !important;
+}
+
+/* ==========================================================
+   Maintenance Filter Fields
+   ========================================================== */
+
+.maintenance-filter-field .q-field__control {
+    min-height: 54px !important;
+    border-radius: 18px !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+    border: 1px solid rgba(187, 224, 239, 0.9) !important;
+    box-shadow: 0 8px 20px rgba(22, 30, 84, 0.04) !important;
+}
+
+.maintenance-filter-field .q-field__control:hover {
+    border-color: rgba(22, 30, 84, 0.22) !important;
+}
+
+.maintenance-filter-field.q-field--focused .q-field__control {
+    border-color: #161E54 !important;
+    box-shadow: 0 0 0 3px rgba(187, 224, 239, 0.48) !important;
+}
+
+.maintenance-filter-field .q-field__label {
+    color: rgba(22, 30, 84, 0.58) !important;
+    font-weight: 800 !important;
+    font-size: 13px !important;
+}
+
+.maintenance-filter-field .q-field__native,
+.maintenance-filter-field .q-field__input {
+    color: #161E54 !important;
+    font-weight: 650 !important;
+    font-size: 15px !important;
+}
+
+.maintenance-filter-field .q-field__append {
+    color: rgba(22, 30, 84, 0.52) !important;
+}
+
+/* ==========================================================
+   Maintenance Search Input - Text + Hover Only
+   ========================================================== */
+
+.maintenance-inner-filter-field .q-field__label {
+    color: rgba(22, 30, 84, 0.62) !important;
+    font-weight: 900 !important;
+    font-size: 13px !important;
+}
+
+.maintenance-inner-filter-field .q-field__native,
+.maintenance-inner-filter-field .q-field__input {
+    color: #161E54 !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+}
+
+.maintenance-inner-filter-field input::placeholder {
+    color: rgba(22, 30, 84, 0.42) !important;
+    font-weight: 600 !important;
+}
+
+.maintenance-inner-filter-field .q-field__control:hover {
+    background: rgba(187, 224, 239, 0.16) !important;
+    transition: background 0.18s ease !important;
+}
+
+.maintenance-inner-filter-field .q-field__append {
+    color: rgba(22, 30, 84, 0.50) !important;
+}

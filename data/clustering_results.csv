@@ -1,0 +1,4 @@
+﻿Algorithm,Approach,n_clusters,Silhouette Score,Davies-Bouldin Index,Calinski-Harabasz Index
+GMM,Model-based,2,0.2796,1.3595,132022.97
+K-Means,Partitioning-based,2,0.2784,1.3585,136653.65
+BIRCH,Hierarchical-based,2,0.2127,1.6018,96932.74
