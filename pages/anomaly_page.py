@@ -167,7 +167,7 @@ def anomaly_page():
                 "relative w-full items-center justify-end px-7 py-5 "
                 "border-b border-[#BBE0EF]/50 bg-[#BBE0EF]/20"
             ):
-                ui.label("Các Bản Ghi Bất Thường Hàng Đầu").classes(
+                ui.label("Top Các Bản Ghi Bất Thường").classes(
                     "absolute left-1/2 -translate-x-1/2 "
                     "text-[22px] font-extrabold text-[#161E54]"
                 )

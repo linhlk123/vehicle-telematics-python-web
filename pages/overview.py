@@ -360,7 +360,7 @@ def overview_page():
                             "text-[14px] font-extrabold text-[#F16D34]"
                         )
 
-                    ui.label("Mô hình sản xuất được chọn").classes(
+                    ui.label("Mô hình Machine Learning được chọn").classes(
                         "w-full text-center text-[13px] font-semibold text-[#161E54]/55 pb-6"
                     )
 
